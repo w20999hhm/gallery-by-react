@@ -3,16 +3,30 @@ require('styles/App.scss');
 
 import React from 'react';
 
-// let imageDatas = require("../data/imageDatas.json")
-//
-// imageDatas = (function genImageURL(imageDatasArr) {
-//   for (var i = 0; i < imageDatasArr.length; i++) {
-//     let singleImageData = imageDatasArr[i];
-//     singleImageData.imageURL = require('../images/' + singleImageData.fileName);
-//     imageDatasArr[i] = singleImageData;
-//   }
-//   return imageDatasArr;
-// })(imageDatas);
+let imageDatas = require("../data/imageDatas.json")
+
+imageDatas = (function genImageURL(imageDatasArr) {
+  for (var i = 0; i < imageDatasArr.length; i++) {
+    let singleImageData = imageDatasArr[i];
+    singleImageData.imageURL = require('../images/' + singleImageData.fileName);
+    imageDatasArr[i] = singleImageData;
+  }
+  return imageDatasArr;
+})(imageDatas);
+
+let ImgFigure = React.createClass({
+  render: function () {
+    return(
+      <figure>
+        <img src="" alt=""/>
+        <figcaption>
+          <h2>
+          </h2>
+        </figcaption>
+      </figure>
+    )
+  }
+})
 
 class AppComponent extends React.Component {
   render() {
